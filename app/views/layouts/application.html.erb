@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyApp</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <%= link_to t('home'), root_path %> |
+      <%= link_to t('about'), about_path %> |
+      <%= link_to t('add_info'), add_info_path %> |
+      <%= link_to t('logout'), logout_path %> |
+      <%= link_to 'English', url_for(locale: 'en') %> |
+      <%= link_to 'Українська', url_for(locale: 'uk') %>
+    </nav>
+  </header>
+
+  <main>
+  <h1><%= t('title') %></h1>
+  <h2><%= t('description') %></h2>
+    <%= yield %>
+  </main>
+
+  <footer>
+  </footer>
+</body>
+</html>
